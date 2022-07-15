@@ -1,0 +1,36 @@
+<section>
+    <div class="container mt-2">
+        <div class="row">
+            <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Email</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each userData}}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.fname}}</td>
+      <td>{{this.sname}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.address}}</td>
+      <td>{{this.email}}</td>
+      <td>
+        <a href="/admin/edit-user?id={{this._id}}" class="btn btn-outline-primary">Edit</a>
+        <a href="/admin/delete-user/{{this._id}}" onclick="return confirm('permenantly delete user {{this.fname}} ?')" class="btn btn-outline-danger">Remove</a>
+      </td>
+    </tr>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+        </div>
+    </div>
+</section>

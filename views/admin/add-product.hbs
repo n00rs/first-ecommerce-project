@@ -1,0 +1,41 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h3 class="text-center">Add Product</h3>
+                <form action="/admin/add-product" method="post" enctype="multipart/form-data">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Name</span>
+                        <input type="text" class="form-control" placeholder="productName" name="prodName"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group mt-3 mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                        <select class="form-select" id="inputGroupSelect01" name="category">
+                            <option selected value="Helmet">Helmet</option>
+                            <option value="Glove">Glove</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="OtherGears">Other Gears</option>
+                        </select>
+                    </div>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping">Price</span>
+                        <input type="number" class="form-control" placeholder="ProductPrice" name="price" 
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Description</span>
+                        <textarea class="form-control" aria-label="With textarea" name="description"
+                            placeholder="Description"></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="image" aria-describedby="inputGroupFileAddon04"
+                            aria-label="Upload">
+                    </div>
+                    <button type="submit" class="btn btn-success  text-center">Add Product</button>
+                    <a href="/admin" class="btn btn-outline-danger">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

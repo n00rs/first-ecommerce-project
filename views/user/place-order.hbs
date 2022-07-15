@@ -1,0 +1,91 @@
+<section>
+    <div class="container ">
+        <form action="" method="post" id="placeorder">
+        <div class="row">
+            
+            <div class="col-md-6 mt-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="FullName">Full Name</span>
+                    <input type="text" class="form-control" placeholder="Full Name(required)" name="name"
+                        aria-describedby="basic-addon1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Phone</span>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="+91[0-9]{9}" value="+91"
+                        required>
+                </div>
+
+                <label for="basic-url" class="form-label">Address</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="address1">Address:1</span>
+                    <input type="text" class="form-control" id="address1" name="address1" placeholder="House No,Buildingname (required)"
+                        aria-describedby="basic-addon3" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="address2">Address:2</span>
+                    <input type="text" class="form-control" id="address2" name="address2" placeholder="Area,Road name (required)"
+                        aria-describedby="basic-addon3" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Pin</span>
+                    <input type="text" class="form-control" placeholder="Pincode (required)" id="pincode" name="pincode"
+                        aria-label="pincode" required>
+                    <span class="input-group-text">City</span>
+                    <input type="text" class="form-control" placeholder="City (required)" name="city" id="city" required>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">State</span>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="State (required)"
+                        aria-describedby="basic-addon3" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="id" name="userId" value="{{user._id}}" hidden>
+                    <textarea class="form-control" name="" placeholder="instruction to delivery partner(optional)*" aria-label="With textarea"></textarea>
+                </div>
+            </div>
+            <div class="col-md-5 mt-3">
+                <div class="card">
+                    <div class="card-header">
+                        Oreder Summary
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Total Amount : &#8377; {{total}}</h5>
+                        <p class="card-text">Payment Options</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Upi" name="paymentOption" id="upi">
+                            <label class="form-check-label" for="upi">
+                                Upi
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="Cards" name="paymentOption" id="card">
+                            <label class="form-check-label" for="cards">
+                                Credit/Debit/ATM card
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="netbanking" name="paymentOption" id="netbanking">
+                            <label class="form-check-label" for="netbanking">
+                                Net Banking
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="cod" name="paymentOption" id="cod">
+                            <label class="form-check-label" for="cod">
+                                Cash On Delivery
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Check Out</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </form>
+        
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row ">
+        <div class="col-md-5">
+            <h1 class="display-6 text-center">Login</h1>
+            <form action="/login" method="POST">
+  <div class="mb-3">
+    
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="Email" name="email" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  {{#if Error}}
+    <h6 class=" text-danger">{{Error}}</h6>
+    {{/if}}
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <a href="/signup">Create an account</a><br>
+
+
+  <button type="submit" class="btn btn-primary mt-1">Login</button>
+</form>
+        </div>
+    </div>
+</div>

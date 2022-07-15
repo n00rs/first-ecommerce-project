@@ -1,0 +1,50 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1 class="display-6 text-center"> Admin Sign up</h1>
+                <form action="/admin/signup" method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname" id="fname" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">Second Name</label>
+                        <input type="text" class="form-control" name="sname" id="sname" required>
+                    </div>
+                    {{#if idError}}
+                    <h6 class="text-danger">{{idError}}</h6>
+                    {{/if}}
+                    <div class="col-12">
+                        <label for="" class="form-label">Admin Id</label>
+                        <input type="email" class="form-control" name="adminId" id="Email" placeholder="username@123" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            placeholder="Password" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmpass" onkeyup="password_confirm()"
+                            placeholder="Confirm Password" required>
+                    </div>
+                    <span id="message"></span>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                            <label class="form-check-label" for="gridCheck">
+                                Accept Terms & Conditions
+                            </label>
+                        </div>
+                    </div>
+                    <a href="/admin/login">Already an Admin</a><br>
+                    <div class="col-12">
+                        <button type="submit" id="signup" class="btn btn-primary">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

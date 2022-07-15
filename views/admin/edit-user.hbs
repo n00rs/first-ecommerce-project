@@ -1,0 +1,47 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1 class="display-6 text-center">Edit User Data</h1>
+                <form action="/admin/edit-user" method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname" value="{{user.fname}}" id="fname">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">Second Name</label>
+                        <input type="text" class="form-control" name="sname" value="{{user.sname}}" id="sname">
+                    </div>
+                     <div class="col-12">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone"  pattern="+91[0-9]{9}" value="+91 {{user.phone}}">
+                    </div>
+                     <div class="col-md-6">
+                        <label for="" class="form-label">address</label>
+                        <input type="text" class="form-control" name="address"  id="address">
+                    </div>
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Email</label>
+                        <input type="email" class="form-control-plaintext" name="email" id="Email" value="{{user.email}}" readonly>
+                    </div>
+
+                    
+                    
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Change User Details
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" id="signup" class="btn btn-primary">Edit</button>
+                        <a href="/admin" class="btn btn-outline-danger">Go Back</a>
+                        <input type="text" name="id" value="{{user._id}}" hidden>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,54 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h3 class="text-center">Edit {{product.prodName}}</h3>
+                <form action="/admin/edit-product" method="post" enctype="multipart/form-data">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">Name</span>
+                        <input type="text" class="form-control" placeholder="productName" name="prodName"
+                            aria-describedby="addon-wrapping" value="{{product.prodName}}">
+                    </div>
+                    <div class="input-group mt-3 mb-3">
+                        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                        <select class="form-select" id="inputGroupSelect01" name="category">
+                            <option selected value="{{product.category}}">{{product.category}}(selected)</option>
+                            <option value="Helmet">Helmet</option>
+                            <option value="Glove">Glove</option>
+                            <option value="Jacket">Jacket</option>
+                            <option value="OtherGears">Other Gears</option>
+                        </select>
+                    </div>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping">Price</span>
+                        <input type="number" class="form-control" placeholder="ProductPrice" name="price" value= "{{product.price}}"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Description</span>
+                        <input type="text" class="form-control"  name="description"
+                            placeholder="Description" value="{{product.description}}" >
+                    </div>
+                    <div class="p-2">
+                        Image
+                        <img src="../public/product-image/{{product._id}}.jpg" style="height: 75px;width:75px ;" id="img">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="image" aria-describedby="inputGroupFileAddon04" onchange="imgview(event)"
+                            aria-label="Upload">
+                    </div>
+                    <button type="submit" class="btn btn-success  text-center">Edit Product</button>
+                    <input type="text" name ="id" value="{{product._id}}" hidden>
+
+                    <a href="/admin" class="btn btn-outline-danger">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function imgview(event){
+        document.getElementById('img').src = URL.createObjectURL(event.target.files[0])
+   }
+</script>

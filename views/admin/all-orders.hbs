@@ -1,0 +1,42 @@
+
+<div class="container">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Pincode</th>
+      <th scope="col">City</th>
+      <th scope="col">Items</th>
+      <th scope="col">Total</th>
+      <th scope="col">Status</th>
+      <th scope="col">Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each orders}}
+    <tr>
+      <th scope="row">{{this._id}}</th>
+      
+      
+      <td>{{this.address.name}}</td>
+      <td>{{this.address.phone}}</td>
+      <td>{{this.address.pincode}}</td>
+      <td>{{this.address.city}}</td>
+      <td> <a href="/admin/order-items/{{this._id}}/{{this.total}}">See Items</a> </td>
+     
+      
+      <td> &#8377; {{this.total}}</td>
+      <td><span id="shipmentStatus">{{this.shipmentStatus}}</span></td>
+      <td><button class="btn btn-outline-success" onclick="shipped('{{this._id}}')">Dispatch</button></td>
+      
+      {{!-- <td>
+        <a href="/admin/edit-product?id={{this._id}}" class="btn btn-outline-primary">Edit</a>
+        <a href="/admin/delete-product/{{this._id}}" onclick="return confirm('Delete Item {{this.prodName}} ?')" class="btn btn-outline-danger">Delete</a>
+      </td> --}}
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,54 @@
+{{!--
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+--}}
+<link rel="stylesheet" href="/public/css/order-details.css">
+<section class="h-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-10 col-xl-8">
+                <div class="card" style="border-radius: 10px;">
+
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <p class="lead fw-normal mb-0" style="color: #231f6c;">ITEMS</p>
+                            <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p>
+                        </div>
+                        {{#each orderItems}}
+                        <div class="card shadow-0 border mb-4">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="/product-image/{{this.product._id}}.jpg" class="img-fluid"
+                                            alt="Phone">
+                                    </div>
+                                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                        <p class="text-muted mb-0">{{this.product.prodName}}</p>
+                                    </div>
+                                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                        <p class="text-muted mb-0 small">{{this.product.category}}</p>
+                                    </div>
+
+                                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                        <p class="text-muted mb-0 small">Qty:{{this.quantity}}</p>
+                                    </div>
+                                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                        <p class="text-muted mb-0 small">&#8377; {{this.product.price}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        {{/each}}
+                        <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-2">
+                                <p class="lead fw-normal mb-0" style="color: #231f6c;">Total</p>
+                            </div>
+                             <div class="col-md-2  d-flex ms-auto me-5 ">
+                                        <p  class="lead fw-normal mb-0" style="color: #231f6c;">&#8377; {{total}}   </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

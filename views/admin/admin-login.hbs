@@ -1,0 +1,28 @@
+
+<div class="container mt-5">
+    <div class="row ">
+        <div class="col-md-5">
+            <h1 class="display-6 text-center">Admin Login</h1>
+            <form action="/admin/login" method="POST">
+  <div class="mb-3">
+    
+    <label for="" class="form-label">Admin id</label>
+    <input type="email" class="form-control" id="adminId" name="adminId" aria-describedby="emailHelp">
+    <div id="" class="form-text">Don't share your Id with anyone else.</div>
+  </div>
+  {{#if idError}}
+    <h6 class=" text-danger">{{idError}}</h6>
+    {{/if}}
+  <div class="mb-3">
+    <label for="" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  
+  <a href="/admin/signup">Create an New Admin account</a><br>
+
+
+  <button type="submit" class="btn btn-primary mt-1">Login</button>
+</form>
+        </div>
+    </div>
+</div>

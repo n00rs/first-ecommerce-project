@@ -1,0 +1,53 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h1 class="display-6 text-center">Sign up</h1>
+                <form action="/signup" method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fname" id="fname">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="" class="form-label">Second Name</label>
+                        <input type="text" class="form-control" name="sname" id="sname">
+                    </div>
+                     <div class="col-12">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" pattern="+91[0-9]{9}" value="+91">
+                    </div>
+                     {{#if idError}}
+    <h6 class=" text-danger">{{idError}}</h6>
+    {{/if}}
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="email" id="Email" placeholder="sample@email.com">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="password"
+                            placeholder="Password">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputAddress2" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmpass" onkeyup="password_confirm()"
+                            placeholder="Confirm Password">
+                    </div>
+                    <span id="message"></span>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Accept Terms & Conditions
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" id="signup" class="btn btn-primary">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
